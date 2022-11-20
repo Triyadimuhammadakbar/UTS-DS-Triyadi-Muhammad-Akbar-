@@ -1,0 +1,73 @@
+import java.util.ArrayList;
+class Mahasiswa {
+    private Integer id;
+    private String name;
+    private String kelas;
+    private Integer tglMasuk;
+
+    public Mahasiswa(Integer id, String name, String kelas, Integer tglMasuk) {
+        this.id = id;
+        this.name = name;
+        this.kelas = kelas;
+        this.tglMasuk = tglMasuk;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String nameNew) {
+        this.name = nameNew;
+    }
+
+    public String getKelas() {
+        return kelas;
+    }
+
+    public void setKelas(String kelasNew) {
+        this.kelas = kelasNew;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int idNew) {
+        this.id = idNew;
+    }
+
+    @Override
+    public String toString() {
+        return "Mahasiswa{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", kelas='" + kelas + '\'' +
+                ", tanggal masuk='" + tglMasuk + '\'' + '}';
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Mahasiswa> mahasiswa = new ArrayList<>();
+        mahasiswa.add(new Mahasiswa(252, "megachan", "Informatika", 12122022));
+        
+        mahasiswa.add(new Mahasiswa(99, "puanchan", "Informatika", 12122022));
+        mahasiswa.add(new Mahasiswa(32, "rizki billar", "Informatika", 12122022));
+        mahasiswa.add(new Mahasiswa(128, "lesti", "Informatika", 12122022));
+        mahasiswa.add(new Mahasiswa(26, "raffi ahmad", "Informatika", 12122022));
+
+        System.out.println("~~~~~~~~~~{ Print All }~~~~~~~~~~");
+        mahasiswa.forEach(mahasiswaa -> System.out.println(mahasiswaa));
+        
+        System.out.println("\n~~~~~~~~~~{ Remove }~~~~~~~~~~");
+        
+        mahasiswa.remove(1);
+        mahasiswa.forEach(mahasiswaa -> System.out.println(mahasiswaa));
+
+        System.out.println("\n~~~~~~~~~~{ Add }~~~~~~~~~~");
+        mahasiswa.add(1, new Mahasiswa(31, "rafathar malik ahmad", "Informatika", 19122022));
+        mahasiswa.forEach(mahasiswaa -> System.out.println(mahasiswaa));
+
+        System.out.println("~~~~~~~~~~{ Size }~~~~~~~~~~");
+        System.out.println("Total Mahasiswa : " + mahasiswa.size());
+    }
+}
